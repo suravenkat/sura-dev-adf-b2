@@ -1,0 +1,39 @@
+{
+	"name": "DsAdlsTargetDynamic",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_newstorage_Source",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"TableFolderName": {
+				"type": "string"
+			},
+			"TableFileName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().TableFileName",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().TableFolderName",
+					"type": "Expression"
+				},
+				"fileSystem": "target"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,39 @@
+{
+	"name": "incrementa_schedule",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "incremental_loading",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"tableslist": [
+						{
+							"tableName": "iplteams",
+							"tableSchemaName": "dbo",
+							"WaterMark_Column": "last_updated"
+						},
+						{
+							"tableName": "employees",
+							"tableSchemaName": "dbo",
+							"WaterMark_Column": "lastmodified"
+						}
+					]
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 1,
+				"startTime": "2023-07-27T09:08:00",
+				"endTime": "2023-08-15T09:00:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}

@@ -1,0 +1,12 @@
+{
+	"name": "targetsqldb",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=surasqlserver.database.windows.net;initial catalog=targetsqldb;user id=venkkysura",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDM0OEI5N0RCLTBEQUUtNDM3Ni04MDM1LTQ5OTM2OEY1RjdDQl8zZmRkOTVkOS04OGNiLTRhNjItYTQ2Yi1hN2M0YmRjNTVmZjIiDQp9"
+		}
+	}
+}

@@ -1,0 +1,31 @@
+{
+	"name": "bkp_dstargetsqldb",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "targetsqldb",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"tableSchemaName": {
+				"type": "string"
+			},
+			"tableName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": {
+				"value": "@dataset().tableSchemaName",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().tableName",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

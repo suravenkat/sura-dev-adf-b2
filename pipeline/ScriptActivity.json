@@ -1,0 +1,68 @@
+{
+	"name": "ScriptActivity",
+	"properties": {
+		"activities": [
+			{
+				"name": "Script1",
+				"type": "Script",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"typeProperties": {
+					"scripts": [
+						{
+							"type": "Query",
+							"text": "PRINT 'Start of SQL statements'\nselect * from Cricket\nPRINT'End of SQL statement'"
+						},
+						{
+							"parameters": [
+								{
+									"name": "Name",
+									"type": "String",
+									"value": "Virat Kohli",
+									"direction": "Input"
+								},
+								{
+									"name": "Team",
+									"type": "String",
+									"value": "India",
+									"direction": "Input"
+								}
+							],
+							"type": "Query",
+							"text": "select * from Cricket where PlayerName=@Name AND Team=@Team"
+						},
+						{
+							"type": "NonQuery",
+							"text": "create table scripttable(table_name varchar(50),refreshed varchar(10))"
+						}
+					],
+					"scriptBlockExecutionTimeout": "02:00:00",
+					"logSettings": {
+						"logDestination": "ExternalStore",
+						"logLocationSettings": {
+							"linkedServiceName": {
+								"referenceName": "AzureBlobStorage1",
+								"type": "LinkedServiceReference"
+							},
+							"path": "target/output"
+						}
+					}
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-07-20T17:09:54Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

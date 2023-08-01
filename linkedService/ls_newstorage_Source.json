@@ -1,0 +1,11 @@
+{
+	"name": "ls_newstorage_Source",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://surastorageadls.dfs.core.windows.net/"
+		}
+	}
+}

@@ -1,0 +1,61 @@
+{
+	"name": "IfCondition",
+	"properties": {
+		"activities": [
+			{
+				"name": "If Condition1",
+				"type": "IfCondition",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"expression": {
+						"value": "@contains(pipeline().parameters.operation, 'Ingestion')",
+						"type": "Expression"
+					},
+					"ifFalseActivities": [
+						{
+							"name": "Ingestion",
+							"type": "ExecutePipeline",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"pipeline": {
+									"referenceName": "Ingestion",
+									"type": "PipelineReference"
+								},
+								"waitOnCompletion": true
+							}
+						}
+					],
+					"ifTrueActivities": [
+						{
+							"name": "Extraction",
+							"type": "ExecutePipeline",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"pipeline": {
+									"referenceName": "Extraction",
+									"type": "PipelineReference"
+								},
+								"waitOnCompletion": true
+							}
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"operation": {
+				"type": "array",
+				"defaultValue": [
+					"Extraction",
+					"Ingestion"
+				]
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2023-07-17T15:13:23Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,21 @@
+{
+	"name": "sura-dev-adf-d",
+	"properties": {
+		"globalParameters": {
+			"adlscontainer": {
+				"type": "string",
+				"value": "target"
+			},
+			"rootfolder": {
+				"type": "string",
+				"value": "output"
+			}
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "35a36164-34f5-42c2-becd-1e99516844ca",
+		"tenantId": "97e4b7a9-21d3-47b8-8fd8-4e97fc632174"
+	}
+}
