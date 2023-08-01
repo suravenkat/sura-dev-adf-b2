@@ -1,0 +1,74 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "sura-dev-adf-d"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
+		"targetsqldb_connectionString": {
+			"value": ""
+		},
+		"ls_newstorage_Source_properties_typeProperties_url": {
+			"value": "https://surastorageadls.dfs.core.windows.net/"
+		},
+		"TumblingTrigger_properties_pipeline_parameters_startdate": {
+			"value": "@trigger().outputs.windowStartTime"
+		},
+		"TumblingTrigger_properties_pipeline_parameters_enddate": {
+			"value": "@trigger().outputs.windowEndTime"
+		},
+		"TumblingWindowTrigger_properties_pipeline_parameters_startdate": {
+			"value": "@trigger().outputs.windowStartTime"
+		},
+		"TumblingWindowTrigger_properties_pipeline_parameters_enddate": {
+			"value": "@trigger().outputs.windowEndTime"
+		},
+		"event_properties_typeProperties_scope": {
+			"value": "/subscriptions/75b37c58-cd8d-42db-acf0-3ebecb4e5312/resourceGroups/sura_rg/providers/Microsoft.Storage/storageAccounts/surastorageadls"
+		},
+		"eventTrigger_properties_typeProperties_scope": {
+			"value": "/subscriptions/75b37c58-cd8d-42db-acf0-3ebecb4e5312/resourceGroups/sura_rg/providers/Microsoft.Storage/storageAccounts/surastorageadls"
+		},
+		"eventtriggeradls_properties_typeProperties_scope": {
+			"value": "/subscriptions/75b37c58-cd8d-42db-acf0-3ebecb4e5312/resourceGroups/sura_rg/providers/Microsoft.Storage/storageAccounts/surastorageadls"
+		},
+		"incrementa_schedule_properties_incremental_loading_parameters_tableslist": {
+			"value": [
+				{
+					"tableName": "iplteams",
+					"tableSchemaName": "dbo",
+					"WaterMark_Column": "last_updated"
+				},
+				{
+					"tableName": "employees",
+					"tableSchemaName": "dbo",
+					"WaterMark_Column": "lastmodified"
+				}
+			]
+		},
+		"newtumbling_properties_pipeline_parameters_startdate": {
+			"value": "@trigger().outputs.windowStartTime"
+		},
+		"newtumbling_properties_pipeline_parameters_enddate": {
+			"value": "@trigger().outputs.windowEndTime"
+		},
+		"trigger1_tumbling_48_properties_pipeline_parameters_startdate": {
+			"value": "@trigger().outputs.windowStartTime"
+		},
+		"trigger1_tumbling_48_properties_pipeline_parameters_enddate": {
+			"value": "@trigger().outputs.windowEndTime"
+		},
+		"trigger2_tumbling_properties_pipeline_parameters_startdate": {
+			"value": "@trigger().outputs.windowStartTime"
+		},
+		"trigger2_tumbling_properties_pipeline_parameters_enddate": {
+			"value": "@trigger().outputs.windowEndTime"
+		}
+	}
+}

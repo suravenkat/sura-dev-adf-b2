@@ -1,0 +1,10 @@
+{
+	"adlscontainer": {
+		"type": "string",
+		"value": "target"
+	},
+	"rootfolder": {
+		"type": "string",
+		"value": "output"
+	}
+}
